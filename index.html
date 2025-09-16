@@ -14,93 +14,44 @@
     --surface:#FFFFFF;
     --text:#1E1E1E;
     --muted:#555B66;
-    --navy:#1A237E;     /* primary accent */
-    --teal:#00897B;     /* secondary accent */
-    --accent:#FF7043;   /* optional warm accent */
+    --navy:#1A237E;     
+    --teal:#00897B;     
+    --accent:#FF7043;   
     --radius:12px;
     --container:1100px;
   }
-
-  /* Reset-ish */
   *{box-sizing:border-box}
-  html,body{height:100%}
   body{
-    margin:0;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:var(--bg);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
+    margin:0; font-family:Inter,system-ui; background:var(--bg); color:var(--text);
+    line-height:1.5; -webkit-font-smoothing:antialiased;
   }
-
-  a{color:var(--teal); text-decoration:none}
-  a:hover{opacity:0.9}
-
+  a{color:var(--teal); text-decoration:none} a:hover{opacity:0.9}
   .wrap{max-width:var(--container); margin:0 auto; padding:40px 22px;}
-
-  /* Top nav / header */
-  header{
-    position:sticky; top:0; z-index:40;
-    backdrop-filter: blur(6px);
-    background: linear-gradient(180deg, rgba(249,249,249,0.9), rgba(249,249,249,0.7));
-    border-bottom:1px solid rgba(30,30,30,0.04);
-  }
-  .nav{display:flex; align-items:center; justify-content:space-between; max-width:var(--container); margin:0 auto; padding:14px 22px;}
-  .brand{display:flex; gap:12px; align-items:center}
-  .brand .logo{
-    width:48px; height:48px; border-radius:8px; background:linear-gradient(135deg,var(--navy),var(--teal));
-    display:grid; place-items:center; color:white; font-weight:700; font-family: Montserrat, sans-serif;
-  }
-  nav ul{list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center}
-  nav li{font-weight:600; color:var(--muted)}
-  .cta{display:inline-block; padding:8px 12px; border-radius:8px; background:var(--teal); color:white; font-weight:600; font-size:0.95rem}
-
-  /* Hero */
-  .hero{display:grid; grid-template-columns:1fr 380px; gap:36px; align-items:center; padding:48px 0;}
-  .hero h1{font-family: Montserrat, sans-serif; font-size:clamp(2rem,4vw,3rem); margin:0 0 10px 0; color:var(--navy)}
-  .tagline{color:var(--muted); margin-bottom:20px}
-  .hero .actions{display:flex; gap:12px; flex-wrap:wrap}
-  .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none}
-  .btn-primary{background:var(--navy); color:white}
-  .btn-outline{border:1px solid rgba(30,30,30,0.08); background:transparent; color:var(--text)}
-
-  /* Profile card */
-  .profile-card{background:var(--surface); padding:22px; border-radius:var(--radius); box-shadow:0 6px 20px rgba(20,20,20,0.04)}
-  .avatar{width:100%; height:100%; display:grid; place-items:center; color:white; font-family:Montserrat; font-weight:700; border-radius:10px; padding:28px; background:linear-gradient(135deg,var(--navy),var(--teal)); font-size:1.6rem}
-
-  /* Sections */
+  header{position:sticky; top:0; background:rgba(249,249,249,0.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(0,0,0,0.05);}
+  .nav{display:flex; justify-content:space-between; align-items:center; max-width:var(--container); margin:0 auto; padding:14px 22px;}
+  .brand{display:flex; align-items:center; gap:12px}
+  .brand .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--teal));display:grid;place-items:center;color:#fff;font-weight:700;font-family:Montserrat}
+  nav ul{display:flex;list-style:none;gap:18px;margin:0;padding:0}
+  nav li{font-weight:600;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:600}
+  .btn-primary{background:var(--navy);color:white}
+  .btn-outline{border:1px solid rgba(30,30,30,0.1);color:var(--text);background:transparent}
+  .hero{display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:center;padding:48px 0}
+  .hero h1{font-family:Montserrat;font-size:clamp(2rem,4vw,3rem);margin:0 0 10px;color:var(--navy)}
+  .tagline{color:var(--muted);margin-bottom:20px}
+  .profile-card{background:var(--surface);padding:22px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.05)}
+  .avatar{width:100%;height:100%;display:grid;place-items:center;color:white;font-family:Montserrat;font-weight:700;border-radius:10px;padding:28px;background:linear-gradient(135deg,var(--navy),var(--teal));font-size:1.6rem}
   section{padding:36px 0}
-  h2{font-family:Montserrat; color:var(--navy); margin:0 0 14px 0; font-size:1.2rem}
-  p.lead{color:var(--muted); margin:0 0 20px 0}
-
-  /* Grid cards */
-  .grid{display:grid; gap:18px}
-  .projects-grid{grid-template-columns:repeat(3,1fr)}
-  .games-grid{grid-template-columns:repeat(3,1fr)}
-  .card{background:var(--surface); border-radius:12px; padding:14px; box-shadow:0 6px 20px rgba(20,20,20,0.04); display:flex; flex-direction:column; gap:10px; min-height:160px}
-  .thumb{height:140px; border-radius:8px; overflow:hidden; display:block; background:linear-gradient(180deg, rgba(20,20,20,0.06), rgba(0,0,0,0.03)); display:grid; place-items:center}
-  .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto}
-  .tag{background:rgba(0,0,0,0.04); padding:6px 8px; border-radius:8px; font-size:0.8rem; color:var(--muted)}
-
-  /* Contact form */
-  .contact-grid{display:grid; grid-template-columns:1fr 360px; gap:20px}
-  form input, form textarea{width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(30,30,30,0.06); font-size:0.95rem; background:white}
-  form textarea{min-height:140px; resize:vertical}
-
-  /* Footer */
-  footer{padding:20px 0; color:var(--muted); text-align:center; font-size:0.95rem}
-
-  /* Responsive */
-  @media (max-width:980px){
-    .hero{grid-template-columns:1fr}
-    .projects-grid, .games-grid{grid-template-columns:repeat(2,1fr)}
-    .contact-grid{grid-template-columns:1fr}
-  }
-  @media (max-width:640px){
-    nav ul{display:none}
-    .projects-grid, .games-grid{grid-template-columns:1fr}
-  }
+  h2{font-family:Montserrat;color:var(--navy);margin:0 0 14px;font-size:1.2rem}
+  p.lead{color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;gap:18px}
+  .projects-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .games-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .card{background:var(--surface);border-radius:12px;padding:14px;box-shadow:0 6px 20px rgba(0,0,0,0.04);display:flex;flex-direction:column;gap:10px}
+  .thumb{height:140px;border-radius:8px;overflow:hidden;display:grid;place-items:center;background:rgba(0,0,0,0.03)}
+  .tag{background:rgba(0,0,0,0.04);padding:6px 8px;border-radius:8px;font-size:0.8rem;color:var(--muted)}
+  footer{padding:20px 0;color:var(--muted);text-align:center;font-size:0.95rem}
+  @media(max-width:980px){.hero{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -114,256 +65,96 @@
         <div style="font-size:0.85rem;color:var(--muted)">Computer Science • Developer • Game Creator</div>
       </div>
     </div>
-
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#games">Games</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#socials">Socials</a></li>
       </ul>
     </nav>
-
-    <div>
-      <a class="btn btn-primary" href="#contact">Contact</a>
-    </div>
+    <a class="btn btn-primary" href="#socials">Contact</a>
   </div>
 </header>
 
 <main class="wrap">
+
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero">
     <div>
       <h1>William Bailey</h1>
-      <div class="tagline">Computer Science student focused on systems, machine learning, and game development. I build tools, experiments, and small games — and publish playables on itch.io.</div>
-      <div class="actions">
+      <div class="tagline">CS student focused on systems, machine learning, and game development. I build tools, experiments, and small games — and publish playables on itch.io.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn btn-primary" href="#" download>Download Resume</a>
-        <a class="btn btn-outline" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-
-      <div style="margin-top:28px">
-        <h2>Featured Project</h2>
-        <div class="card" style="flex-direction:row;gap:14px;align-items:center">
-          <div style="flex:1">
-            <strong>Data Poisoning Detector</strong>
-            <div style="color:var(--muted); margin-top:6px">A research project building defenses for ML models against poisoning attacks — includes dataset curation, model training pipelines, and visualization tools.</div>
-            <div class="tags" style="margin-top:10px">
-              <div class="tag">Python</div>
-              <div class="tag">ML</div>
-              <div class="tag">Research</div>
-            </div>
-          </div>
-          <div style="width:140px">
-            <div class="thumb">
-              <!-- simple SVG placeholder -->
-              <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-                <rect width="120" height="80" fill="#E8EEF0"/>
-                <text x="60" y="44" font-family="Inter" font-size="12" fill="#6B7280" text-anchor="middle">screenshot</text>
-              </svg>
-            </div>
-          </div>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/" target="_blank">GitHub</a>
+        <a class="btn btn-outline" href="https://linkedin.com/" target="_blank">LinkedIn</a>
       </div>
     </div>
-
     <aside>
       <div class="profile-card">
         <div class="avatar">WB</div>
-        <div style="margin-top:12px">
-          <div style="font-weight:700">William Bailey</div>
-          <div style="color:var(--muted); margin-top:6px; font-size:0.95rem">CS student building systems, ML tools, and small games. Interested in reproducible experiments and clear engineering.</div>
-        </div>
-      </div>
-
-      <div style="margin-top:14px; display:flex; gap:10px;">
-        <a class="btn btn-outline" href="#" style="flex:1">Portfolio PDF</a>
-        <a class="btn" style="background:var(--teal); color:#fff; flex:1" href="#">Hire/Collaborate</a>
+        <div style="margin-top:12px;font-weight:700">CS student & developer interested in reproducible ML, performance engineering, and games.</div>
       </div>
     </aside>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div style="display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;">
-      <div style="flex:1; min-width:260px;">
-        <h2>About</h2>
-        <p class="lead">I’m a computer science student and developer focused on systems, machine learning, and indie game creation. I build reproducible experiments, small tools, and publish playable prototypes.</p>
-        <p style="color:var(--muted)">Education: B.S. Computer Science — [University]. Available for internships and collaborative research projects. Interests include reproducible ML research, performance engineering, and game design.</p>
-      </div>
-
-      <div style="width:320px;">
-        <h2>Quick Links</h2>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <a href="#" class="btn btn-outline">Download Resume</a>
-          <a href="https://github.com/" target="_blank" class="btn btn-outline">GitHub</a>
-          <a href="https://itch.io/" target="_blank" class="btn btn-outline">itch.io</a>
-          <a href="https://www.linkedin.com/" target="_blank" class="btn btn-outline">LinkedIn</a>
-        </div>
-      </div>
-    </div>
+    <h2>About</h2>
+    <p class="lead">I’m a computer science student and developer focused on systems, machine learning, and indie game creation. I build reproducible experiments, small tools, and publish playable prototypes.</p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
-    <p class="lead">Selected computer science projects — each entry links to a repo or a detailed project page.</p>
-
-    <div class="grid projects-grid" style="margin-top:18px">
-      <!-- Project 1 -->
-      <article class="card">
-        <div class="thumb">
-          <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice">
-            <rect width="200" height="100" fill="#EDF2F7"></rect>
-            <text x="100" y="55" text-anchor="middle" fill="#6B7280" font-size="12" font-family="Inter">project screenshot</text>
-          </svg>
-        </div>
-        <div>
-          <strong>Poisoning Detection Toolkit</strong>
-          <div style="color:var(--muted); margin-top:6px; font-size:0.95rem">Toolkit for detecting data poisoning in classification tasks — includes visualization and benchmarking tools.</div>
-        </div>
-        <div class="tags">
-          <div class="tag">Python</div><div class="tag">PyTorch</div><div class="tag">ML</div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="card">
-        <div class="thumb">
-          <svg viewBox="0 0 200 100"><rect width="200" height="100" fill="#FFF7ED"></rect><text x="100" y="55" text-anchor="middle" fill="#7C4A31" font-size="12" font-family="Inter">screenshot</text></svg>
-        </div>
-        <div>
-          <strong>Distributed Mutex Simulation</strong>
-          <div style="color:var(--muted); margin-top:6px; font-size:0.95rem">A VM-ready C implementation of Ricart-Agrawala for teaching distributed mutual exclusion.</div>
-        </div>
-        <div class="tags">
-          <div class="tag">C</div><div class="tag">Distributed Systems</div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="card">
-        <div class="thumb">
-          <svg viewBox="0 0 200 100"><rect width="200" height="100" fill="#E8F8F5"></rect><text x="100" y="55" text-anchor="middle" fill="#087F6B" font-size="12" font-family="Inter">screenshot</text></svg>
-        </div>
-        <div>
-          <strong>LLM Teaching Framework</strong>
-          <div style="color:var(--muted); margin-top:6px; font-size:0.95rem">Small research project using model-in-the-loop RL to implement safe-teacher/student experiments.</div>
-        </div>
-        <div class="tags">
-          <div class="tag">Python</div><div class="tag">RL</div>
-        </div>
-      </article>
+    <p class="lead">Selected computer science projects.</p>
+    <div class="grid projects-grid">
+      <!-- COPY/PASTE this block for new projects -->
+      <div class="card">
+        <div class="thumb">[Project Screenshot]</div>
+        <strong>Poisoning Detection Toolkit</strong>
+        <p style="color:var(--muted)">Toolkit for detecting data poisoning in classification tasks.</p>
+        <div><span class="tag">Python</span><span class="tag">ML</span></div>
+      </div>
+      <!-- end project -->
     </div>
   </section>
 
   <!-- GAMES -->
   <section id="games">
     <h2>Games</h2>
-    <p class="lead">Indie games and playable prototypes. Click to open itch.io pages.</p>
-
-    <div class="grid games-grid" style="margin-top:18px">
-      <!-- Game 1 -->
-      <article class="card">
-        <a class="thumb" href="https://itch.io/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 200 100"><rect width="200" height="100" fill="#F0F7FF"/><text x="100" y="55" fill="#2C3E50" font-size="12" font-family="Inter" text-anchor="middle">Game Cover</text></svg>
-        </a>
-        <div>
-          <strong>Pixel Runner</strong>
-          <div style="color:var(--muted); margin-top:6px">A small 2D runner prototype created in Unity. Procedural levels and simple leaderboards.</div>
-        </div>
-        <div style="margin-top:auto; display:flex; gap:8px;">
-          <a class="btn btn-outline" href="https://itch.io/" target="_blank">Play on itch.io</a>
-        </div>
-      </article>
-
-      <!-- Game 2 -->
-      <article class="card">
-        <a class="thumb" href="https://itch.io/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 200 100"><rect width="200" height="100" fill="#FFF4E6"/><text x="100" y="55" fill="#7C4A31" font-size="12" font-family="Inter" text-anchor="middle">Game Cover</text></svg>
-        </a>
-        <div>
-          <strong>Tower Tactics</strong>
-          <div style="color:var(--muted); margin-top:6px">A small strategy prototype experimenting with emergent enemy behavior and tile-based maps.</div>
-        </div>
-        <div style="margin-top:auto; display:flex; gap:8px;">
-          <a class="btn btn-outline" href="https://itch.io/" target="_blank">Play on itch.io</a>
-        </div>
-      </article>
-
-      <!-- Game 3: placeholder -->
-      <article class="card">
-        <div class="thumb">
-          <svg viewBox="0 0 200 100"><rect width="200" height="100" fill="#F7F7F9"/><text x="100" y="55" fill="#6B7280" font-size="12" font-family="Inter" text-anchor="middle">Coming Soon</text></svg>
-        </div>
-        <div>
-          <strong>Prototype X</strong>
-          <div style="color:var(--muted); margin-top:6px">Prototype under development — demo and writeup coming soon.</div>
-        </div>
-        <div class="tags">
-          <div class="tag">Unity</div><div class="tag">Prototype</div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="lead">Interested in collaborating, hiring, or asking about a project? Send a short message below or use the links to my profiles.</p>
-
-    <div class="contact-grid" style="margin-top:18px">
-      <div>
-        <form onsubmit="return submitForm(event)">
-          <label style="display:block; margin-bottom:8px; font-weight:600">Name</label>
-          <input id="name" required placeholder="Your name" />
-          <label style="display:block; margin:12px 0 8px 0; font-weight:600">Email</label>
-          <input id="email" type="email" required placeholder="you@example.com" />
-          <label style="display:block; margin:12px 0 8px 0; font-weight:600">Message</label>
-          <textarea id="message" required placeholder="Short message"></textarea>
-          <div style="margin-top:12px; display:flex; gap:10px;">
-            <button class="btn btn-primary" type="submit">Send</button>
-            <a class="btn btn-outline" href="mailto:your@email.com">Email directly</a>
-          </div>
-        </form>
+    <p class="lead">Indie games and playable prototypes.</p>
+    <div class="grid games-grid">
+      <!-- COPY/PASTE this block for new games -->
+      <div class="card">
+        <div class="thumb">[Game Cover]</div>
+        <strong>Pixel Runner</strong>
+        <p style="color:var(--muted)">A small 2D runner prototype created in Unity.</p>
+        <a class="btn btn-outline" href="https://itch.io/" target="_blank">Play on itch.io</a>
       </div>
-
-      <aside style="display:flex;flex-direction:column;gap:12px">
-        <div class="profile-card">
-          <div style="font-weight:700">Get in touch</div>
-          <div style="color:var(--muted); margin-top:6px">Prefer email? Use the button above or reach me on GitHub / LinkedIn.</div>
-        </div>
-
-        <div style="background:var(--surface); padding:14px; border-radius:10px; box-shadow:0 6px 20px rgba(20,20,20,0.04)">
-          <div style="font-weight:700; margin-bottom:8px">Profiles</div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-            <a href="https://itch.io/" target="_blank">itch.io</a>
-          </div>
-        </div>
-      </aside>
+      <!-- end game -->
     </div>
   </section>
 
-  <footer>
-    <div>© <span id="year"></span> William Bailey — Built for portfolio &amp; project showcase</div>
-  </footer>
+  <!-- SOCIALS -->
+  <section id="socials">
+    <h2>Socials</h2>
+    <p class="lead">Find me on these platforms:</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="https://itch.io/" target="_blank">itch.io</a>
+    </div>
+  </section>
+
 </main>
 
+<footer>
+  © <span id="year"></span> William Bailey — Portfolio & Showcase
+</footer>
+
 <script>
-  // small client-only form fallback: opens a mailto with content.
-  function submitForm(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const subject = encodeURIComponent('Portfolio contact from ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\\nEmail: ' + email + '\\n\\n' + message);
-    window.location.href = 'mailto:your@email.com?subject=' + subject + '&body=' + body;
-    return false;
-  }
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 
 </body>
